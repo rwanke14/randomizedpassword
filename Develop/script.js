@@ -19,14 +19,15 @@ var lowerCaseEl = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","
 var upperCaseEl = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numEl = ["1","2","3","4","5","6","7","8","9","10"];
 var charEl = ["!","@","#","$","%","^","&","*","?","~"];
-
 var passwordOptions = [];
+var finalPassword = "";
 var button = document.querySelector ("#genPass");
+var insertPass = document.querySelector ("#insertPass");
 
 
 
 
-button.addEventListener ("click", randomPassword)
+button.addEventListener ("click", randomPassword);
 
 
 function randomPassword () {
@@ -36,7 +37,7 @@ function randomPassword () {
   var askPass = confirm ("Do you want to create a Password?");
 
   if (askPass) {
-    var passLength = prompt ("How long should your password be? (Please pick between 6 and 128)")
+    var passLength = prompt ("How long should your password be? (Please pick between 6 and 128)");
     
 
     if (passLength > 6 && passLength < 128) {
@@ -95,11 +96,20 @@ function randomPassword () {
 
     } 
 
-    
-
   }
 
+for (var i = 0; i < passLength; i++) {
+
+  var genRandom = Math.floor(Math.Random() * passwordOptions.length);
+  finalPassword += passwordOptions [genRandom];
 }
+
+
+insertPass.textContent = finalPassword;
+
+}
+
+
 
 
 
