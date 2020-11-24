@@ -16,6 +16,9 @@ Here is a screenshot of the deployed application:
 2.) page with prompts:
 
 
+3.) page after password has been passed into the text box.
+
+
 
 3.) Validation of HTML and CSS:
 

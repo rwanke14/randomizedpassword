@@ -14,6 +14,7 @@
 //confirm alert for numbers
 //ones through all the prompts - password is added into text area box
 
+
 //Setting up the varialbes for the strings and a few others for the function for the end strings to create the password.
 
 var lowerCaseEl = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","u","r","s","t","u","v"];
@@ -97,6 +98,7 @@ function randomPassword () {
       var upperLowerLetters = lowerCaseEl.concat (upperCaseEl);
       passwordOptions = numEl.concat (upperLowerLetters);
       console.log(passwordOptions)
+
     } if (addLowerCase === false && addUpperCase === true && addNumbers === false && addCharcs === false)  {
 
       passwordOptions = passwordOptions.concat(upperCaseEl);
@@ -105,7 +107,13 @@ function randomPassword () {
     } if (addLowerCase === false && addUpperCase === false && addNumbers === true && addCharcs === false) {
 
       passwordOptions = passwordOptions.concat(numEl);
+      console.log (passwordOptions);
 
+    } if (addLowerCase === true && addUpperCase === true && addNumbers === false && addCharcs === true) {
+
+      var lowerUpper = lowerCaseEl.concat (upperCaseEl);
+      passwordOptions = lowerUpper.concat (charEl);
+      console.log (passwordOptions);
 
     } if (addLowerCase === false && addUpperCase === false && addNumbers === false && addCharcs === false) {
 
@@ -117,17 +125,19 @@ function randomPassword () {
       //Adding a math.floor to generate a random password based on the password options chosen previously.
 
       for (var i = 0; i < passLength; i++) {
-    var genRandom = Math.floor(Math.random() * passwordOptions.length);
+        var genRandom = (Math.floor(Math.random () * passwordOptions.length))
+    
+    //var genRandom = Math.floor(Math.random() * passwordOptions.length);
     finalPassword += passwordOptions [genRandom];
     console.log (finalPassword);
       }
+      
 
       // In the final step the password is entered back into the text box.
-      
       insertPass.textContent = finalPassword;
-      
-    }
+     }
 
+      
     }
     
   
@@ -147,28 +157,7 @@ function randomPassword () {
 
 
 
-// Assignment Code
-//var generateBtn = document.querySelector("#generate");
 
-
-// Write password to the #password input
-/*
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-} */
-
-//for (var i = 0; i < passLength; i++) {
-  //var genRandom = passwordOptions [Math.floor(Math.random() * passwordOptions.length)];
-  //var genRandom = Math.floor(Math.Random() * passwordOptions.length);
-  //finalPassword += passwordOptions(genRandom);
-
-
-//console.log (finalPassword);
-
-
-//insertPass.textContent = finalPassword;
 
   
 
@@ -195,14 +184,6 @@ function writePassword() {
 ////generateBtn.addEventListener("click", writePassword);
 
 
-
-
-//Concat sections for joining arrays.
-
-//var letters = lowerCase.concat (upperCase);
-//var numLetter = letters.concat (num);
-//var charAll = numLetter.concat (char);
-//console.log (charAll);
 
 
 

@@ -39,6 +39,12 @@ h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
+  /* Adding CSS to the Id for the button to make sure after the javascript runs and button is clicked the color changes to a complimentary color. */
+  #genPass {
+    background-color: #800020;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
   /* Making sure the button moves position when it gets to a smaller screen, instead of getting bigger*/
 
   @media screen and (max-width: 430px) {
