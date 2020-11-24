@@ -1,14 +1,21 @@
+
+/* Adding color and typography to the header.*/
 h1 {
   text-align: center;
-  color: purple;
+  color: #006b80;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: x-large;
+  margin-bottom: 5%;
 }
+
+/* Adding fun background image to improve look.*/
 
 .jumbotron {
-  background-color: lavender;
+  background-color: #eed6d5;
+  background:url(https://img2.mahoneswallpapershop.com/prodimage/ProductImage/560/22e055e8-1420-486c-8727-15f6e96a7aed.jpg);
 }
 
+/* Setting up the text area box and make it responsive */
 
   textarea {
     width: 100%;
@@ -19,4 +26,23 @@ h1 {
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+  }
+
+  /* moving button so it is in the center*/
+
+  .btn {
+    margin-left: 35%;
+    margin-top: 5%;
+    background-color: #800020;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  /* Making sure the button moves position when it gets to a smaller screen, instead of getting bigger*/
+
+  @media screen and (max-width: 430px) {
+    .btn {
+      margin-left: 14%;
+    }
   }
