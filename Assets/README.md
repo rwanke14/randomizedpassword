@@ -11,6 +11,7 @@ To make the password generator look a bit nicer, I've add CSS to include a backg
 2.) HTML Validated: Assets/HTML w3schools validator.png
 2.) CSS Validated: Assets/CSS Validated.png
 4.) Javascript validated: Assets/Javascriptvalidated.jpeg
+5.) Link to website: https://rwanke14.github.io/randomizedpassword/
 
 
 
