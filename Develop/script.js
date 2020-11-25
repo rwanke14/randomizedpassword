@@ -38,19 +38,17 @@ function randomPassword () {
  //Conifrm user wants to create a password.
 
   var askPass = confirm ("Do you want to create a Password?");
-  passLength = parseInt(passwordOptions);
+  
   //Ask about how many characters they would like for their password and establish variables for prompting questions to ask about what letters are needed.
   if (askPass === true) {
     var passLength = prompt ("How long should your password be? (Please pick between 6 and 128)");
-    
+    var addLowerCase = confirm ("Do you want add lower case letters?");
+    var addUpperCase = confirm ("Do you want to add upper case letters?");
+    var addNumbers = confirm ("Do you want to add Numbers?");
+    var addCharcs = confirm ("Do you want to add special characters?");
     //defining password length parameters.
 
     if (passLength > 6 && passLength < 128) {
-      
-      var addLowerCase = confirm ("Do you want add lower case letters?");
-      var addUpperCase = confirm ("Do you want to add upper case letters?");
-      var addNumbers = confirm ("Do you want to add Numbers?");
-      var addCharcs = confirm ("Do you want to add special characters?");
 
       //Setting up alert for if they choose outside the parameters set.
 
@@ -97,7 +95,7 @@ function randomPassword () {
 
       var upperLowerLetters = lowerCaseEl.concat (upperCaseEl);
       passwordOptions = numEl.concat (upperLowerLetters);
-      console.log(passwordOptions)
+      console.log(passwordOptions);
 
     } if (addLowerCase === false && addUpperCase === true && addNumbers === false && addCharcs === false)  {
 
@@ -111,13 +109,18 @@ function randomPassword () {
 
     } if (addLowerCase === true && addUpperCase === true && addNumbers === false && addCharcs === true) {
 
-      var lowerUpper = lowerCaseEl.concat (upperCaseEl);
-      passwordOptions = lowerUpper.concat (charEl);
+      var lowUplet = lowerCaseEl.concat (upperCaseEl);
+      passwordOptions = lowUplet.concat (charEl);
       console.log (passwordOptions);
+
+    } if (addLowerCase === false && addUpperCase === true && addNumbers === false && addCharcs === true) {
+
+        passwordOptions = upperCaseEl.concat (charEl);
+        console.log (passwordOptions);
 
     } if (addLowerCase === false && addUpperCase === false && addNumbers === false && addCharcs === false) {
 
-      alert ("Must choose at least one type of character, please try again!")
+      alert ("Must choose at least one type of character, please try again!");
 
     } else{
 
@@ -125,11 +128,13 @@ function randomPassword () {
       //Adding a math.floor to generate a random password based on the password options chosen previously.
 
       for (var i = 0; i < passLength; i++) {
-        var genRandom = (Math.floor(Math.random () * passwordOptions.length))
+        
+        var genRandom = (Math.floor(Math.random () * passwordOptions.length));
     
     //var genRandom = Math.floor(Math.random() * passwordOptions.length);
-    finalPassword += passwordOptions [genRandom];
-    console.log (finalPassword);
+      finalPassword += passwordOptions [genRandom];
+      console.log (finalPassword);
+
       }
       
 
@@ -140,9 +145,21 @@ function randomPassword () {
       
     }
     
-  
   }
 
+// adding a function to copy and paste text. Set up this function with the aid of W3Schools page on it. Helped me understand how to set it up and understand value.
+  
+function copyPass () {
+
+  var copyText = document.getElementById ("insertPass");
+  copyText.select ();
+  copyText.setSelectionRange (0,9999);
+  document.execCommand ("copy");
+  alert ("Copied password to clipboard: " + copyText.value);
+  
+}
+
+
 
 
 
@@ -164,24 +181,6 @@ function randomPassword () {
 
 
 
-
-
-// Assignment Code
-//var generateBtn = document.querySelector("#generate");
-
-
-// Write password to the #password input
-/*
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-} */
-
-// Add event listener to generate button
-////generateBtn.addEventListener("click", writePassword);
 
 
 

@@ -7,20 +7,10 @@ At the end the password is passed back into the text box on the webpage.
 
 To make the password generator look a bit nicer, I've add CSS to include a background and updated typography from the bootstrap jumbotron settings.
 
-Here is a screenshot of the deployed application:
-
-1.) page without prompts:
-
-
-
-2.) page with prompts:
-
-
-3.) page after password has been passed into the text box.
-
-
-
-3.) Validation of HTML and CSS:
+1.) Deployed Page: Assets/Deployed Page - Password Generator.png
+2.) HTML Validated: Assets/HTML w3schools validator.png
+2.) CSS Validated: Assets/CSS Validated.png
+4.) Javascript validated: Assets/Javascriptvalidated.jpeg
 
 
 
